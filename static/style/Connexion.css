@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: orange;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+
+main{
+    background-image: url("../img/VRAIfond.jpg");
+}
+
+#inscrit_ici{
+    font-size: 1.5rem;
+    margin-left: 39rem;
+    color: darkcyan;
+}
+
+input{
+    display: flex;
+    padding: 0.5rem;
+}
+
+form{
+    margin-left: 42rem;
+}
+
+button{
+    padding: 0.5rem;
+    border-radius: 30px;
+    color: black;
+    background-color: orange;
+    margin-right: 10rem;
+}
+
+.img_co{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.img_co li{
+    list-style: none;
+}
+
+footer{
+    background-color: black;
+}
+
+.foot {
+    color: white;
+}
+
+.footlist{
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.sousmenu1 a{
+    color: white;
+    font-size: 1.5rem;
+}
+.sousmenu2 a{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.sousmenu3 a{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.sousmenu4 a{
+    color: white;
+    font-size: 1.5rem;
+}

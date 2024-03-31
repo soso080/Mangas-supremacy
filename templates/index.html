@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="description"> 
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}"/>
+    <title>Mangas Supremacy</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
+</head>
+<body>
+    <header>
+        <div>
+            <nav>
+                <ul class="navlist">
+                    <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/logo.png')}}" alt="" width="22%"></a> 
+                    <li><a href="">Accueil</a></li>
+                    <li><a href="{{url_for('connexion')}}">Connexion</a></li>
+
+                    <li><a href="{{url_for('inscription')}}">Inscription</a></li>
+
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>       
+    </header>
+
+    <main>
+        <h1>Heyyy si toi aussi t'aimerais etre au courant des derniere actu mangas rejoins nous en t'inscrivant !!!</h1>
+        <ul>
+            <li>
+                <p>Inscrit toi pour pouvoir voter pour ton mangas favoris !!!</p>
+                <img src="{{url_for('static',filename='img/vote.png')}}" alt="" width="40%">
+            </li>
+            <li>
+                <p>Ouuu parcourt le site pour en savoir plus sur tes categorie preferé</p>
+                <img src="{{url_for('static',filename='img/categorie.png')}}" alt="" width="40%">
+            </li>
+            <li>
+                <p>et egalement participer a divers jeux !</p>
+                <p>Donc venez nous rejoindre en vous <a href="{{url_for('inscription')}}" id="inscrit_acceuil">inscrivant ici!!!</a> </p>
+                
+            </li>
+        </ul>
+        
+    </main>
+    <footer>
+        <div class="foot">
+            <ul class="footlist">
+                <li>Mangas supremacy
+                <ul class="sousmenu1">
+                    <li><a href="{{url_for('shonen')}}">Shonen</a></li>
+                    <li><a href="{{url_for('seinen')}}">Seinen</a></li>
+                </ul></li>
+                <li>Compte
+                    <ul class="sousmenu2">
+                        <li><a href="{{url_for('connexion')}}">Connectez vous</a></li>
+                        <li><a href="{{url_for('inscription')}}">Inscrivez vous</a></li>
+                    </ul>
+                </li>
+                <li>Suivez nous
+                    <ul class="sousmenu3">
+                        <li><a href="https://www.facebook.com/">Facebook</a></li>
+                        <li><a href="twitter.com">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    </ul>
+                </li>
+                <li>Contact
+                    <ul class="sousmenu4">
+                        <li><a href="{{url_for('contact')}}">Contactez nous</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

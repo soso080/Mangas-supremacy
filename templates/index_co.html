@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style/index_co.css')}}">
+    <meta name="description" content="description"> 
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+    <title>Mangas supremacy</title>
+</head>
+<body>
+    <header>
+        
+        <div >
+            <nav>
+                <ul class="navlist">
+                    <a href="{{url_for('index_co')}}"><img src="{{url_for('static', filename='img/logo.png')}}" alt="" width="22%"></a> 
+                    <li><a href="{{url_for('index_co')}}">Accueil</a></li>
+                    <li><a href="">Mangas/Anime</a>
+                        <ul class="genre">
+                            <li><a href="{{url_for('index_co')}}">Mangas</a></li>
+                            <li><a href="{{url_for('index_co')}}">Manhwa</a></li>
+                            <li><a href="{{url_for('index_co')}}">Manhua</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Jeux</a></li>
+
+                    <li><a href="Contact.html">Contact</a></li>
+
+                    <li><form action="{{url_for('logout')}}" method=""><button id="deco">Deconnexion</button></form></li>
+                    <img src="{{url_for('static', filename='img/user.png')}}" alt="" width="3%" height="2%">
+                    <li><p id="user">{{nom}} {{prenom}}</p></li>
+                    
+
+
+                    
+                </ul>
+            </nav>
+        </div>       
+    </header>
+    <main>
+        <h1>Bienvenue sur mangas supremacy !</h1>
+        <input type="search" id="search" placeholder="Rechercher...">
+            
+        </form>
+        
+
+        <p>Si tu souhaite voter ou en savoir plus sur diverse anime ou mangas vous etes a la bonne porte</p>
+        <img src="naruto.jpg" alt="">
+    </main>
+    <footer>
+        <div class="foot">
+            <ul class="footlist">
+                <li>Mangas supremacy
+                <ul class="sousmenu1">
+                    <li><a href="shonen.html">Shonen</a></li>
+                    <li><a href="seinen.html">Seinen</a></li>
+                </ul></li>
+                <li>Compte
+                    <ul class="sousmenu2">
+                        <li><a href="Connexion.html">Connectez vous</a></li>
+                        <li><a href="inscription.html">Inscrivez vous</a></li>
+                    </ul>
+                </li>
+                <li>Suivez nous
+                    <ul class="sousmenu3">
+                        <li><a href="https://www.facebook.com/">Facebook</a></li>
+                        <li><a href="twitter.com">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    </ul>
+                </li>
+                <li>Contact
+                    <ul class="sousmenu4">
+                        <li><a href="contact2.html">Contactez nous</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="co.js"></script>
+</body>
+</html>

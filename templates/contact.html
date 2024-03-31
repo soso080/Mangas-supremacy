@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="description"> 
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style/Contact.css')}}">
+    <title>Mangas Supremacy</title>
+</head>
+<body>
+    <header>
+    
+        <div >
+            <nav>
+                <ul class="navlist">
+                    <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/logo.png')}}" alt="" width="22%"></a> 
+                    <li><a href="{{url_for('index')}}">Accueil</a></li>
+                    <li><a href="">Mangas/Anime</a>
+                        <ul class="genre">
+                            <li><a href="{{url_for('shonen')}}">shonen</a></li>
+                            <li><a href="{{url_for('seinen')}}">seinen</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="{{url_for('connexion')}}">Connexion</a></li>
+
+                    <li><a href="{{url_for('inscription')}}">Inscription</a></li>
+
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>       
+    </header>
+
+    <main>
+        <form action="{{url_for('Contact')}}" method="POST">
+            <h1>Contact</h1>
+            <input type="text" id="nom" placeholder="Nom *" name="nom" required><br>
+            <input type="email" id="email" placeholder="Email *" name="email" required><br>
+            <input type="text" id="tel" placeholder="Tel(facultatif)" name="tel"><br>
+            <textarea id="msg" rows="4" placeholder="Message *" name="msg" required></textarea><br>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p>Si vous souhaitez nous donner votre avis ou des idées le support de contact du site est a votre entiere disposition </p>
+        <ul class="img_contact">
+            <img src="{{url_for('static', filename='img/Goku.png')}}" alt="" width="20%">
+            <img src="{{url_for('static', filename='img/Luffy.webp')}}" alt="" width="20%">
+        </ul>
+    </main>
+    <footer>
+        <div class="foot">
+            <ul class="footlist">
+                <li>Mangas supremacy
+                <ul class="sousmenu1">
+                    <li><a href="{{url_for('shonen')}}">Shonen</a></li>
+                    <li><a href="{{url_for('seinen')}}">Seinen</a></li>
+                </ul></li>
+                <li>Compte
+                    <ul class="sousmenu2">
+                        <li><a href="{{url_for('connexion')}}">Connectez vous</a></li>
+                        <li><a href="{{url_for('inscription')}}">Inscrivez vous</a></li>
+                    </ul>
+                </li>
+                <li>Suivez nous
+                    <ul class="sousmenu3">
+                        <li><a href="https://www.facebook.com/">Facebook</a></li>
+                        <li><a href="twitter.com">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    </ul>
+                </li>
+                <li>Contact
+                    <ul class="sousmenu4">
+                        <li><a href="{{url_for('contact')}}">Contactez nous</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
