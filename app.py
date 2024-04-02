@@ -38,6 +38,11 @@ def shonen():
 def index_co():
     return render_template("index_co.html")
 
+@app.route("/jeux")
+def jeux():
+    return render_template("jeux.html")
+
+
 @app.route("/register",methods=['POST'])
 def register():
     data = request.form
@@ -107,6 +112,11 @@ def Contact():
 
     contacts.insert_one(contact_form)
     return redirect(url_for('contact'))
+
+@app.route("/delete_all_account")
+def delete_all_account():
+    user.delete_many()
+    return "tous les comptes ont ete supprimer"
 
 
 if __name__ == "__main__":
