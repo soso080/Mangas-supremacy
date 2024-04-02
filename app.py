@@ -26,21 +26,29 @@ def contact():
 def inscription():
     return render_template("inscription.html")
 
-@app.route("/seinen")
-def seinen():
-    return render_template("seinen.html")
+@app.route("/manwha")
+def manwha():
+    nom = session['nom']
+    prenom = session['prenom']
+    return render_template("manwha.html",nom=nom,prenom=prenom)
 
-@app.route("/shonen")
-def shonen():
-    return render_template("shonen.html")
+@app.route("/mangas")
+def mangas():
+    nom = session['nom']
+    prenom = session['prenom']
+    return render_template("mangas.html",nom=nom,prenom=prenom)
 
 @app.route("/index_co")
 def index_co():
-    return render_template("index_co.html")
+    nom = session['nom']
+    prenom = session['prenom']
+    return render_template("index_co.html",nom=nom,prenom=prenom)
 
 @app.route("/jeux")
 def jeux():
-    return render_template("jeux.html")
+    nom = session['nom']
+    prenom = session['prenom']
+    return render_template("jeux.html",nom=nom,prenom=prenom)
 
 
 @app.route("/register",methods=['POST'])
@@ -51,6 +59,8 @@ def register():
     prenom = data.get('prenom')
     email = data.get('email')
     password = data.get('password')
+    session['nom'] = nom
+    session['prenom'] = prenom
 
     existing_user = user.find_one({"email": email})
     if existing_user:
@@ -72,8 +82,12 @@ def register():
 def login():
     data = request.form
 
-    email = data.get("email")
-    password = data.get("password")
+    nom = data.get('nom')
+    prenom = data.get('prenom')
+    email = data.get('email')
+    password = data.get('password')
+    session['nom'] = nom
+    session['prenom'] = prenom
 
     existing_email = user.find_one({"email": email})
     existing_account = user.find_one({"email": email, "password":password})
@@ -81,6 +95,9 @@ def login():
     if existing_account:
         nom = existing_account.get("nom")
         prenom = existing_account.get("prenom")
+        session['nom'] = nom
+        session['prenom'] = prenom
+        print(session)
         return render_template("index_co.html",nom=nom, prenom=prenom)
     elif not existing_account or not existing_email:
         return redirect(url_for('connexion'))
@@ -120,4 +137,5 @@ def delete_all_account():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5000,debug=True)
+    app.run(host="0.0.0.0",port=5000,debug=False)
+
