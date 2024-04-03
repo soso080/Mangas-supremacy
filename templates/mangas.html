@@ -6,47 +6,55 @@
     <meta name="description" content="description"> 
     <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}"/>
     <title>Mangas Supremacy</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='style/shonen.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style/mangas.css')}}">
 </head>
 <body>
     <header>
-        <div>
+        
+        <div >
             <nav>
                 <ul class="navlist">
-                    <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='img/logo.png')}}" alt="" width="22%"></a> 
-                    <li><a href="">Accueil</a></li>
+                    <a href="{{url_for('index_co')}}"><img src="{{url_for('static', filename='img/logo.png')}}" alt="" width="22%"></a> 
+                    <li><a href="{{url_for('index_co')}}">Accueil</a></li>
                     <li><a href="">Mangas/Anime</a>
                         <ul class="genre">
-                            <li><a href="{{url_for('shonen')}}">shonen</a></li>
-                            <li><a href="{{url_for('seinen')}}">seinen</a></li>
+                            <li><a href="{{url_for('mangas')}}">Mangas</a></li>
+                            <li><a href="{{url_for('manwha')}}">Manhwa</a></li>
+                            <li><a href="{{url_for('manhua')}}">Manhua</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{url_for('connexion')}}">Connexion</a></li>
+                    <li><a href="{{url_for('jeux')}}">Jeux</a></li>
 
-                    <li><a href="{{url_for('inscription')}}">Inscription</a></li>
+                    <li><a href="{{url_for('contact_co')}}">Contact</a></li>
 
-                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                    <li><form action="{{url_for('logout')}}" method=""><button id="deco">Deconnexion</button></form></li>
+                    <img src="{{url_for('static', filename='img/user.png')}}" alt="" width="3%" height="2%">
+                    <li><p id="user">{{nom}} {{prenom}}</p></li>
+                    
+
+
+                    
                 </ul>
             </nav>
         </div>       
     </header>
 
     <main>
-        <h1>Les Seinen</h1>
-        <p>#top seinen les plus populaires</p>
+        <h1>Les Mangas</h1>
+        <p>#top mangas les plus populaires</p>
 
         <ul>
-            <img src="{{url_for('static', filename='img/vinland.jpg')}}" alt="" width="20%"> <form id="lock1"><button type="submit">Voter</button></form>
-            <li><a href="" onclick="alert('Veuillez vous connecter ou vous inscrire pour en savoir plus')">Vinland Saga</a></li>
+            <img src="{{url_for('static', filename='img/op.jpg')}}" alt="" width="20%"> <form id="lock1"><button type="submit">Voter</button></form>
+            <li><a href="">One Piece</a></li>
             <hr>
 
-            <img src="{{url_for('static', filename='img/berserk.jpg')}}" alt="" width="20%"> <form id="lock2"><button type="submit">Voter</button></form>
-            <li><a href="" onclick="alert('Veuillez vous connecter ou vous inscrire pour en savoir plus')">Berserk</a></li>
+            <img src="{{url_for('static', filename='img/dbz.jpg')}}" alt="" width="20%"> <form id="lock2"><button type="submit">Voter</button></form>
+            <li><a href="">Dragon Ball Z</a></li>
 
             <hr>
 
-            <img src="{{url_for('static', filename='img/monster.jpg')}}" alt="" width="20%"> <form id="lock3"><button type="submit">Voter</button></form>
-            <li><a href="" onclick="alert('Veuillez vous connecter ou vous inscrire pour en savoir plus')">Monster</a></li>
+            <img src="{{url_for('static', filename='img/naruto.jpg')}}" alt="" width="20%"> <form id="lock3"><button type="submit">Voter</button></form>
+            <li><a href="">Naruto Shippuden</a></li>
             
         </ul>
     </main>
@@ -56,8 +64,8 @@
             <ul class="footlist">
                 <li>Mangas supremacy
                 <ul class="sousmenu1">
-                    <li><a href="{{url_for('shonen')}}">Shonen</a></li>
-                    <li><a href="{{url_for('seinen')}}">Seinen</a></li>
+                    <li><a href="{{url_for('mangas')}}">Mangas</a></li>
+                    <li><a href="{{url_for('manwha')}}">Manwha</a></li>
                 </ul></li>
                 <li>Compte
                     <ul class="sousmenu2">

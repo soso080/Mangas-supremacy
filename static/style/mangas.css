@@ -7,7 +7,12 @@
     justify-content: space-around;
 }
 
-
+#deco{
+    padding: 0.5rem;
+    border-radius: 30px;
+    color: black;
+    background-color: orange;
+}
 
 header{
     background-color: orange;
@@ -70,7 +75,7 @@ a{
 }
 
 main{
-    background-image: url("VRAIfond.jpg");
+    background-image: url("../img/VRAIfond.jpg");
 }
 
 h1{

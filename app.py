@@ -22,6 +22,13 @@ def connexion():
 def contact():
     return render_template("contact.html")
 
+@app.route("/contact_co")
+def contact_co():
+    nom = session['nom']
+    prenom = session['prenom']
+    
+    return render_template("contact_co.html",nom=nom,prenom=prenom)
+
 @app.route("/inscription")
 def inscription():
     return render_template("inscription.html")
@@ -31,6 +38,12 @@ def manwha():
     nom = session['nom']
     prenom = session['prenom']
     return render_template("manwha.html",nom=nom,prenom=prenom)
+
+@app.route("/manhua")
+def manhua():
+    nom = session['nom']
+    prenom = session['prenom']
+    return render_template("manhua.html",nom=nom,prenom=prenom)
 
 @app.route("/mangas")
 def mangas():

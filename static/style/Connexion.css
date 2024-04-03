@@ -43,7 +43,7 @@ button{
     border-radius: 30px;
     color: black;
     background-color: orange;
-    margin-right: 10rem;
+    margin-right: 20rem;
 }
 
 .img_co{
@@ -107,4 +107,5 @@ footer{
     .img_co{
         width: 20px;
     }
+
 }

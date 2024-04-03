@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="description"> 
-    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}"/>
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style/Contact_co.css')}}">
     <title>Mangas Supremacy</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='style/mangas.css')}}">
 </head>
 <body>
     <header>
-        
         <div >
             <nav>
                 <ul class="navlist">
@@ -31,34 +30,26 @@
                     <img src="{{url_for('static', filename='img/user.png')}}" alt="" width="3%" height="2%">
                     <li><p id="user">{{nom}} {{prenom}}</p></li>
                     
-
-
-                    
                 </ul>
             </nav>
         </div>       
     </header>
 
     <main>
-        <h1>Les Manwha</h1>
-        <p>#top manwha les plus populaires</p>
-
-        <ul>
-            <img src="{{url_for('static', filename='img/The beginingAfterTheEnd.webp')}}" alt="" width="20%"> <form id="lock1"><button type="submit">Voter</button></form>
-            <li><a href=""> The Beginning After The End</a></li>
-            <hr>
-
-            <img src="{{url_for('static', filename='img/SoloLeveling_.jpg')}}" alt="" width="20%"> <form id="lock2"><button type="submit">Voter</button></form>
-            <li><a href="">Solo Leveling</a></li>
-
-            <hr>
-
-            <img src="{{url_for('static', filename='img/NanoMachine.webp')}}" alt="" width="20%"> <form id="lock3"><button type="submit">Voter</button></form>
-            <li><a href="">Nano Machine</a></li>
-            
+        <form action="{{url_for('Contact')}}" method="POST">
+            <h1>Contact</h1>
+            <input type="text" id="nom" placeholder="Nom *" name="nom" required><br>
+            <input type="email" id="email" placeholder="Email *" name="email" required><br>
+            <input type="text" id="tel" placeholder="Tel(facultatif)" name="tel"><br>
+            <textarea id="msg" rows="4" placeholder="Message *" name="msg" required></textarea><br>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p>Si vous souhaitez nous donner votre avis ou des idées le support de contact du site est a votre entiere disposition </p>
+        <ul class="img_contact">
+            <img src="{{url_for('static', filename='img/Goku.png')}}" alt="" width="20%">
+            <img src="{{url_for('static', filename='img/Luffy.webp')}}" alt="" width="20%">
         </ul>
     </main>
-
     <footer>
         <div class="foot">
             <ul class="footlist">
