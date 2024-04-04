@@ -90,7 +90,20 @@ a{
     font-size: 2rem;
 }
 
+#p_aff{
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+}
+#titre_aff{
+    display: flex;
+    justify-content: space-between;
+}
 
+#tete_aff{
+    display: flex;
+    margin-top: 4rem;
+}
 
 h1{
     text-align: center;

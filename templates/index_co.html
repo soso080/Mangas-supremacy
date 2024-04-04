@@ -35,12 +35,27 @@
         </div>       
     </header>
     <main>
-        <h1>Bienvenue sur mangas supremacy !</h1>
+        <h1>{{prenom}} Bienvenue sur mangas supremacy !</h1>
         <input type="search" id="search" placeholder="Rechercher...">
             
         </form>
-        <p>Si tu souhaite voter ou en savoir plus sur diverse anime ou mangas vous etes a la bonne porte</p>
-        <img src="naruto.jpg" alt="">
+        <p id="p_aff">En tete d'affiche🔥🔥🔥</p>
+        <ul id="tete_aff">
+            <li><a href=""><img src="{{url_for('static',filename='img/SoloLeveling_.jpg')}}" alt="" width="30%"></a></a></li>
+            <li><a href=""><img src="{{url_for('static',filename='img/Frieren.jpg')}}" alt="" width="30%"></a></a></li>
+            <li><a href=""><img src="{{url_for('static',filename='img/classeroom.jpg')}}" alt="" width="18%"></a></a></li>
+            <li><a href=""><img src="{{url_for('static',filename='img/MagicEmperor.jpg')}}" alt="" width="30%"></a></a></li>
+            <li><a href=""><img src="{{url_for('static',filename='img/wind_breaker.webp')}}" alt="" width="40%"></a></a></li>
+            <li><a href=""><img src="{{url_for('static',filename='img/op.jpg')}}" alt="" width="50%"></a></a></li>
+        </ul>
+        <ul id="titre_aff">
+            <li>solo leveling</li>
+            <li>Frieren</li>
+            <li>Classeroom Of The Elite</li>
+            <li>Demonic Emperor</li>
+            <li>Wind Breaker</li>
+            <li>One Piece</li>
+        </ul>
     </main>
     <footer>
         <div class="foot">

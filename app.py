@@ -110,7 +110,6 @@ def login():
         prenom = existing_account.get("prenom")
         session['nom'] = nom
         session['prenom'] = prenom
-        print(session)
         return render_template("index_co.html",nom=nom, prenom=prenom)
     elif not existing_account or not existing_email:
         return redirect(url_for('connexion'))
@@ -150,5 +149,5 @@ def delete_all_account():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5000,debug=False)
+    app.run(host="0.0.0.0",port=5000,debug=True)
 
