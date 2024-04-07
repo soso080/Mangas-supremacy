@@ -113,3 +113,27 @@ footer{
     color: white;
     font-size: 1.5rem;
 }
+
+
+@media screen and (max-width: 600px){
+    header{
+        width: 70vh;
+    }
+
+    main{
+        width: 70vh;
+    }
+
+    footer{
+        width: 70vh;
+        
+    }
+
+    .footlist{
+        font-size: 0.2rem;
+        color: red;
+    }
+    .sousmenu1 li a, .sousmenu2 li a, .sousmenu3 li a, .sousmenu4 li a{
+        font-size: 0.9rem;
+    }
+}
