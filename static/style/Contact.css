@@ -9,7 +9,70 @@ p{
     text-align: center;
 }
 
+.navlist{
+    display: flex;
+    justify-content: space-around;
+}
 
+
+
+header{
+    background-color: orange;
+}
+ul,li{
+    list-style: none;
+    font-size: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.genre{
+    color: black;
+}
+
+.navlist li a:link, .navlist li a:visited{
+    background-color: #82801974;
+    border-radius: 30px;
+}
+
+.navlist li a:hover{
+    background-color: red;
+}
+
+.navlist li a:active{
+    background-color: red;
+}
+
+.navlist .genre{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    display: none;
+}
+
+.navlist .genre li{
+    float: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid transparent;
+}
+
+.navlist .genre li a:link, .navlist li a:visited{
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.navlist .genre li a:hover{
+    background-color: black;
+}
+
+.navlist li:hover .genre{
+    display: block;
+}
 
 form{
     margin-left: 42rem;
