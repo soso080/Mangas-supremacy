@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: orange;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+#padmin{
+    font-size: 2rem;
+}
+
+h1{
+    text-align: center;
+}

@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session, jsonify
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify, make_response
 from pymongo import MongoClient
 
 
@@ -134,7 +134,7 @@ def login():
     session['nom'] = nom
     session['prenom'] = prenom
 
-    existing_email = user.find_one({"email": email})
+    #existing_email = user.find_one({"email": email})
     existing_account = user.find_one({"email": email, "password":password})
 
     if existing_account:
@@ -143,8 +143,11 @@ def login():
         session['nom'] = nom
         session['prenom'] = prenom
         return render_template("index_co.html",nom=nom, prenom=prenom)
-    elif not existing_account or not existing_email:
+    elif email == "soso@supremacy.com" and password == "admin":
+        return render_template("admin.html")
+    else:
         return redirect(url_for('connexion'))
+    
 
 @app.route("/logout")
 def logout():
@@ -298,7 +301,16 @@ def vote_martialP():
 
     return render_template("redirect_manhua_1.html")
     
-
+@app.route("/reset/vote")
+def reset_vote():
+    # Créer une réponse vide
+    response = make_response("")
+    
+    # Supprimer tous les cookies en définissant une expiration dans le passé
+    for cookie in request.cookies:
+        response.delete_cookie(cookie)
+    
+    return response
 
 
 if __name__ == "__main__":
