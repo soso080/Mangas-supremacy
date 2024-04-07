@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 
 
@@ -8,7 +8,11 @@ app.secret_key = "097ec46a5ccd5edb58047f4c2597d402b9ce3d4495e74d2ebadf15dfe1cc69
 db = client['mangas_supremacy_db']
 user = db['user']
 contacts = db['contact']
+Nbr_vote = db['vote']
 
+
+
+#----------------------------------Page de redirection------------------------------------------------------------------
 
 @app.route("/")
 def index():
@@ -64,6 +68,34 @@ def jeux():
     return render_template("jeux.html",nom=nom,prenom=prenom)
 
 
+
+#----------------------------------Formulaire/Connexion------------------------------------------------------------------
+
+
+
+@app.route("/contact", methods=['POST'])
+def Contact():
+
+    data = request.form
+
+    nom = data.get('nom')
+    email = data.get('email')
+    phone = data.get('tel')
+    message = data.get('tel')
+
+
+
+    contact_form = {
+        "nom":nom,
+        "email":email,
+        "phone":phone,
+        "message":message
+    }
+
+
+    contacts.insert_one(contact_form)
+    return redirect(url_for('contact_co'))
+
 @app.route("/register",methods=['POST'])
 def register():
     data = request.form
@@ -116,38 +148,159 @@ def login():
 
 @app.route("/logout")
 def logout():
-    session.clear()
+    session.pop('nom', None)
+    session.pop('prenom', None)
     return redirect(url_for('index'))
 
-@app.route("/contact", methods=['POST'])
-def Contact():
 
-    data = request.form
-
-    nom = data.get('nom')
-    email = data.get('email')
-    phone = data.get('tel')
-    message = data.get('tel')
+#----------------------------------vote_mangas--------------------------------------------------------------------------
 
 
 
-    contact_form = {
-        "nom":nom,
-        "email":email,
-        "phone":phone,
-        "message":message
-    }
+@app.route("/vote/Dragon-Ball-Z", methods=['POST'])
+def vote_dbz():
+    if 'deja_voté' in session:
+        return render_template("redirect_mangas_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+            {"titre": "Dragon Ball Z"},
+            {"$inc": {"Votes": 1}}  # Incrémente le nombre de votes de 1
+        )
+        session['deja_voté'] = True
+
+    return render_template("redirect_mangas_1.html")
+
+@app.route("/vote/One_Piece", methods=['POST'])
+def vote_op():
+    if 'deja_voté' in session:
+        return render_template("redirect_mangas_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+        {"titre": "One Piece"},
+        {"$inc": {"Votes": 1}} 
+    )
+        session['deja_voté'] = True
+
+    
+
+    return render_template("redirect_mangas_1.html")
 
 
-    contacts.insert_one(contact_form)
-    return redirect(url_for('contact'))
+@app.route("/vote/naruto", methods=['POST'])
+def vote_nar():
+    if 'deja_voté' in session:
+        return render_template("redirect_mangas_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+            {"titre": "Naruto"},
+            {"$inc": {"Votes": 1}}  
+        )
 
-@app.route("/delete_all_account")
-def delete_all_account():
-    user.delete_many()
-    return "tous les comptes ont ete supprimer"
+    session['deja_voté'] = True
+
+    return render_template("redirect_mangas_1.html")
+
+
+#----------------------------------vote_manwha--------------------------------------------------------------------------
+
+
+
+@app.route("/vote/The-Beginning-After-The-End", methods=['POST'])
+def vote_TBATE():
+    if 'deja_voté' in session:
+        return render_template("redirect_manwha_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+            {"titre": "The Beginning After The End"},
+            {"$inc": {"Votes": 1}}  
+        )
+        session['deja_voté'] = True
+
+    return render_template("redirect_manwha_1.html")
+
+@app.route("/vote/Solo-Leveling", methods=['POST'])
+def vote_soloL():
+    if 'deja_voté' in session:
+        return render_template("redirect_manwha_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+        {"titre": "Solo Leveling"},
+        {"$inc": {"Votes": 1}} 
+    )
+        session['deja_voté'] = True
+
+    
+
+    return render_template("redirect_manwha_1.html")
+
+
+@app.route("/vote/Nano-Machine", methods=['POST'])
+def vote_nanoM():
+    if 'deja_voté' in session:
+        return render_template("redirect_manwha_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+            {"titre": "Nano Machine"},
+            {"$inc": {"Votes": 1}}  
+        )
+
+    session['deja_voté'] = True
+
+    return render_template("redirect_manwha_1.html")
+
+
+
+#----------------------------------vote_manhua--------------------------------------------------------------------------
+
+
+
+@app.route("/vote/Magic-Emperor", methods=['POST'])
+def vote_magicE():
+    if 'deja_voté' in session:
+        return render_template("redirect_manhua_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+            {"titre": "Magic Emperor"},
+            {"$inc": {"Votes": 1}}  
+        )
+        session['deja_voté'] = True
+
+    return render_template("redirect_manhua_1.html")
+
+
+@app.route("/vote/Martial-Art-Reigns", methods=['POST'])
+def vote_martialR():
+    if 'deja_voté' in session:
+        return render_template("redirect_manhua_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+        {"titre": "Martial Art Reigns"},
+        {"$inc": {"Votes": 1}} 
+    )
+        session['deja_voté'] = True
+
+    
+
+    return render_template("redirect_manhua_1.html")
+
+
+@app.route("/vote/Martial-Peak", methods=['POST'])
+def vote_martialP():
+    if 'deja_voté' in session:
+        return render_template("redirect_manhua_2.html")
+    else:
+        Nbr_vote.find_one_and_update(
+            {"titre": "Martial Peak"},
+            {"$inc": {"Votes": 1}}  
+        )
+
+    session['deja_voté'] = True
+
+    return render_template("redirect_manhua_1.html")
+    
+
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5000,debug=True)
+    app.run(host="0.0.0.0",port=5000)
 

@@ -44,16 +44,16 @@
         <p>#top manhua les plus populaires</p>
 
         <ul>
-            <img src="{{url_for('static', filename='img/MagicEmperor.jpg')}}" alt="" width="20%"> <form id="lock1"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/MagicEmperor.jpg')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_magicE')}}"><button type="submit">Voter</button></form>
             <li><a href="">Magic Emperor</a></li>
             <hr>
 
-            <img src="{{url_for('static', filename='img/MartialArtReigns.jpeg')}}" alt="" width="20%"> <form id="lock2"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/MartialArtReigns.jpeg')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_martalR')}}"><button type="submit">Voter</button></form>
             <li><a href="">Martial Art Reigns</a></li>
 
             <hr>
 
-            <img src="{{url_for('static', filename='img/MartialPeak.jpeg')}}" alt="" width="20%"> <form id="lock3"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/MartialPeak.jpeg')}}" alt="" width="20%"> <form id="lock3"><button method="POST" action="{{url_for('vote_martialP')}}">Voter</button></form>
             <li><a href="">Martial Peak</a></li>
             
         </ul>

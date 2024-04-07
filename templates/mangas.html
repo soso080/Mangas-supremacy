@@ -29,31 +29,24 @@
 
                     <li><form action="{{url_for('logout')}}" method=""><button id="deco">Deconnexion</button></form></li>
                     <img src="{{url_for('static', filename='img/user.png')}}" alt="" width="3%" height="2%">
-                    <li><p id="user">{{nom}} {{prenom}}</p></li>
-                    
-
-
-                    
-                </ul>
-            </nav>
-        </div>       
-    </header>
+                    <li><p id="user">{{nom}} {{prenom}}</p></li> 
+        </header>
 
     <main>
         <h1>Les Mangas</h1>
         <p>#top mangas les plus populaires</p>
 
         <ul>
-            <img src="{{url_for('static', filename='img/op.jpg')}}" alt="" width="20%"> <form id="lock1"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/op.jpg')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_op')}}"><button type="submit">Voter</button></form>
             <li><a href="">One Piece</a></li>
             <hr>
 
-            <img src="{{url_for('static', filename='img/dbz.jpg')}}" alt="" width="20%"> <form id="lock2"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/dbz.jpg')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_dbz')}}"><button type="submit">Voter</button></form>
             <li><a href="">Dragon Ball Z</a></li>
 
             <hr>
 
-            <img src="{{url_for('static', filename='img/naruto.jpg')}}" alt="" width="20%"> <form id="lock3"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/naruto.jpg')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_nar')}}"><button type="submit">Voter</button></form>
             <li><a href="">Naruto Shippuden</a></li>
             
         </ul>

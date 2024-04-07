@@ -44,16 +44,16 @@
         <p>#top manwha les plus populaires</p>
 
         <ul>
-            <img src="{{url_for('static', filename='img/The beginingAfterTheEnd.webp')}}" alt="" width="20%"> <form id="lock1"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/The beginingAfterTheEnd.webp')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_TBATE')}}"><button type="submit">Voter</button></form>
             <li><a href=""> The Beginning After The End</a></li>
             <hr>
 
-            <img src="{{url_for('static', filename='img/SoloLeveling_.jpg')}}" alt="" width="20%"> <form id="lock2"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/SoloLeveling_.jpg')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_soloL')}}"><button type="submit">Voter</button></form>
             <li><a href="">Solo Leveling</a></li>
 
             <hr>
 
-            <img src="{{url_for('static', filename='img/NanoMachine.webp')}}" alt="" width="20%"> <form id="lock3"><button type="submit">Voter</button></form>
+            <img src="{{url_for('static', filename='img/NanoMachine.webp')}}" alt="" width="20%"> <form method="POST" action="{{url_for('vote_nanoM')}}"><button type="submit">Voter</button></form>
             <li><a href="">Nano Machine</a></li>
             
         </ul>
