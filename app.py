@@ -67,6 +67,10 @@ def jeux():
     prenom = session['prenom']
     return render_template("jeux.html",nom=nom,prenom=prenom)
 
+@app.route("/admin")
+def admin():
+    return render_template("admin.html")
+
 
 
 #----------------------------------Formulaire/Connexion------------------------------------------------------------------
@@ -301,16 +305,17 @@ def vote_martialP():
 
     return render_template("redirect_manhua_1.html")
     
+#----------------------------------Admin--------------------------------------------------------------------------
+
+
 @app.route("/reset/vote")
 def reset_vote():
-    # Créer une réponse vide
     response = make_response("")
-    
-    # Supprimer tous les cookies en définissant une expiration dans le passé
+
     for cookie in request.cookies:
         response.delete_cookie(cookie)
     
-    return response
+    return render_template("redirect_admin.html")
 
 
 if __name__ == "__main__":
