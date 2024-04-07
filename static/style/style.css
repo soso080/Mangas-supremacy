@@ -116,12 +116,22 @@ footer{
 
 
 @media screen and (max-width: 600px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
     header{
         width: 70vh;
     }
 
     main{
         width: 70vh;
+    }
+    h1, p{
+        font-size: 0.9rem;
+    }
+    img{
+        margin-left: 9rem;
     }
 
     footer{
