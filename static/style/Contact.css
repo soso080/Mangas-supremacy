@@ -86,6 +86,7 @@ input{
 
 textarea{
     padding: 0.5rem;
+    padding-left: 0.5;
 }
 
 button{
@@ -139,8 +140,15 @@ footer{
 }
 
 @media screen and (max-width: 600px){
-   
+    ul{
+        display: flex;
+        flex-direction: column
+    }
+    p{
+        margin-left: 0.9rem;
+    }
     form{
-        
+        margin: auto;
+        margin-left: 7rem;
     }
 }
