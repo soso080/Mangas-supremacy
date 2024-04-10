@@ -36,7 +36,7 @@
     </header>
 
     <main>
-        <form action="{{url_for('Contact')}}" method="POST">
+        <form action="{{url_for('Contact')}}" method="POST" id="form">
             <h1>Contact</h1>
             <input type="text" id="nom" placeholder="Nom *" name="nom" required><br>
             <input type="email" id="email" placeholder="Email *" name="email" required><br>
@@ -73,7 +73,7 @@
                 </li>
                 <li>Contact
                     <ul class="sousmenu4">
-                        <li><a href="{{url_for('contact')}}">Contactez nous</a></li>
+                        <li><a href="{{url_for('contact_co')}}">Contactez nous</a></li>
                     </ul>
                 </li>
             </ul>

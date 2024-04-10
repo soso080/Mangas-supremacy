@@ -85,10 +85,7 @@ a{
     font-size: 2rem;
 }
 
-form{
-    margin-left: 42rem;
 
-}
 
 input{
     display: flex;
@@ -109,6 +106,11 @@ button{
 
 main{
     background-image: url("../img/VRAIfond.jpg");
+}
+
+#form{
+    width: 50%; 
+    margin-left: 42rem;
 }
 
 .img_contact{
